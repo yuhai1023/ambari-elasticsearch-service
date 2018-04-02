@@ -18,7 +18,7 @@
     <services>
         <service>
             <name>ELASTICSEARCH</name>
-            <displayName>Elasticsearch</displayName>
+            <displayName>Elasticsearch5</displayName>
             <comment>Elasticsearch is a distributed, RESTful search and analytics engine capable of solving a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data so you can discover the expected and uncover the unexpected.</comment>
             <version>5.2.0</version>
             <components>
@@ -42,8 +42,8 @@
             </osSpecifics>
 
             <configuration-dependencies>
-                  <config-type>elastic-env</config-type>
-                  <config-type>elastic-config</config-type>
+                  <config-type>elastic5-env</config-type>
+                  <config-type>elastic5-config</config-type>
             </configuration-dependencies>
 
             <restartRequiredAfterChange>false</restartRequiredAfterChange>

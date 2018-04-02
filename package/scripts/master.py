@@ -95,7 +95,7 @@ class Master(Script):
         # format('{elastic_pid_file}')
         env.set_params(params)
 
-        configurations = params.config['configurations']['elastic-config']
+        configurations = params.config['configurations']['elastic5-config']
 
         File(format("{elastic_conf_dir}/elasticsearch.yml"),
              content=Template("elasticsearch.yml.j2",
