@@ -76,10 +76,10 @@ if action_destructive_requires_name == 'True':
 else:
     action_destructive_requires_name = 'false'
 
-xpack_security_enabled = str(config['configurations']['elastic5-config']['xpack_security_enabled'])
+# xpack_security_enabled = str(config['configurations']['elastic5-config']['xpack_security_enabled'])
 
 # Elasticsearch expects boolean values to be true or false and will generate an error if you use True or False.
-if xpack_security_enabled == 'True':
-    xpack_security_enabled = 'true'
-else:
-    xpack_security_enabled = 'false'
+#if xpack_security_enabled == 'True':
+#    xpack_security_enabled = 'true'
+#else:
+#    xpack_security_enabled = 'false'
