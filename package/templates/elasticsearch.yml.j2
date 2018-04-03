@@ -16,7 +16,7 @@ cluster.name: {{cluster_name}}
 
 # ------------------------------------ Node ------------------------------------
 # Use a descriptive name for the node:
-node.name: {{network_host}}
+node.name: {{hostname}}
 
 # Add custom attributes to the node:
 node.attr.rack: {{node_attr_rack}}
@@ -38,7 +38,7 @@ bootstrap.memory_lock: {{bootstrap_memory_lock}}
 
 # ---------------------------------- Network -----------------------------------
 # Set the bind address to a specific IP (IPv4 or IPv6):
-network.host: {{hostname}}
+network.host: {{network_host}}
 
 # Set a custom port for HTTP:
 http.port: {{http_port}}
