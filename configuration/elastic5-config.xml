@@ -101,4 +101,16 @@
         <value>false</value>
         <description>Enable X-Pack security module</description>
     </property-->
+
+    <property>
+        <name>http_cors_enable</name>
+        <value>true</value>
+        <description>http.cors.enabled</description>
+    </property>
+
+    <property>
+        <name>http_cors_allow</name>
+        <value>"*"</value>
+        <description>http.cors.allow-origin</description>
+    </property>
 </configuration>
