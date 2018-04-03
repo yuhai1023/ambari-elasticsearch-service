@@ -83,4 +83,9 @@ else:
 #    xpack_security_enabled = 'false'
 
 http_cors_enable = config['configurations']['elastic5-config']['http_cors_enable']
+if http_cors_enable == 'True':
+    http_cors_enable = 'true'
+else:
+    http_cors_enable = 'false'
+
 http_cors_allow = config['configurations']['elastic5-config']['http_cors_allow']
