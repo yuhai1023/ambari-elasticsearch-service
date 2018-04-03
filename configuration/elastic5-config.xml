@@ -53,7 +53,7 @@
     <!-- Network -->
     <property>
         <name>network_host</name>
-        <value>{{hostname}}</value>
+        <value>_local_,_site_,_global_</value>
         <description>Set the bind address to a specific IP (IPv4 or IPv6)</description>
     </property>
 
