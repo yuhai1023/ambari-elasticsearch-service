@@ -37,9 +37,7 @@ elastic_pid_file = format("{elastic_pid_dir}/elasticsearch.pid")
 
 elastic_install_log = elastic_base_dir + '/elasticsearch-install.log'
 elastic_download = 'https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.2.0.tar.gz'
-
 cluster_name = config['configurations']['elastic5-config']['cluster_name']
-hostname = config['hostname']
 node_attr_rack = config['configurations']['elastic5-config']['node_attr_rack']
 path_data = config['configurations']['elastic5-config']['path_data']
 path_logs = config['configurations']['elastic5-config']['path_logs']
@@ -52,7 +50,7 @@ if bootstrap_memory_lock == 'True':
 else:
     bootstrap_memory_lock = 'false'
 
-network_host = config['configurations']['elastic5-config']['{network_host']
+network_host = config['configurations']['elastic5-config']['network_host']
 http_port = config['configurations']['elastic5-config']['http_port']
 
 discovery_zen_ping_unicast_hosts = str(config['configurations']['elastic5-config']['discovery_zen_ping_unicast_hosts'])
