@@ -45,7 +45,7 @@ path_logs = config['configurations']['elastic5-config']['path_logs']
 bootstrap_memory_lock = str(config['configurations']['elastic5-config']['bootstrap_memory_lock'])
 
 # Elasticsearch expetcs that boolean values to be true or false and will generate an error if you use True or False.
-if bootstrap_memory_lock == 'True':
+if bootstrap_memory_lock:
     bootstrap_memory_lock = 'true'
 else:
     bootstrap_memory_lock = 'false'
@@ -69,7 +69,7 @@ node_max_local_storage_nodes = config['configurations']['elastic5-config']['node
 action_destructive_requires_name = str(config['configurations']['elastic5-config']['action_destructive_requires_name'])
 
 # Elasticsearch expecgts boolean values to be true or false and will generate an error if you use True or False.
-if action_destructive_requires_name == 'True':
+if action_destructive_requires_name:
     action_destructive_requires_name = 'true'
 else:
     action_destructive_requires_name = 'false'
@@ -83,7 +83,7 @@ else:
 #    xpack_security_enabled = 'false'
 
 http_cors_enable = config['configurations']['elastic5-config']['http_cors_enable']
-if http_cors_enable == 'True':
+if http_cors_enable:
     http_cors_enable = 'true'
 else:
     http_cors_enable = 'false'
