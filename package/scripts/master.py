@@ -68,8 +68,9 @@ class Master(Script):
              content=''
             )
 
+
         # Download Elasticsearch
-        cmd = format("cd {elastic_base_dir}; wget {elastic_download} -O elasticsearch.tar.gz -a {elastic_install_log}")
+        cmd = format("cd {elastic_base_dir}; if [ ! -f elasticsearch.tar.gz ]; then wget {elastic_download} -O elasticsearch.tar.gz -a {elastic_install_log}; fi")
         Execute(cmd, user=params.elastic_user)
 
         # Install Elasticsearch
@@ -81,8 +82,12 @@ class Master(Script):
         Execute(cmd)
 
         # Remove Elasticsearch installation file
-        cmd = format("cd {elastic_base_dir}; rm elasticsearch.tar.gz")
-        Execute(cmd, user=params.elastic_user)
+        # cmd = format("cd {elastic_base_dir}; rm elasticsearch.tar.gz")
+        # Execute(cmd, user=params.elastic_user)
+
+        # Make {path_dir} if not exist
+        cmd = format("if [ ! -d {path_data} ]; then mkdir -p {path_data}; chown -R {elastic_user}:{elastic_group} {path_data}; fi")
+        Execute(cmd)
 
         Execute('echo "Install complete"')
 
