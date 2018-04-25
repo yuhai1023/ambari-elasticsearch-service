@@ -6,13 +6,17 @@
 #
 # The primary way of configuring a node is via this file. This template lists
 # the most important settings you may want to configure for a production cluster.
-#
-# Please see the documentation for further information on configuration options:
+# # Please see the documentation for further information on configuration options:
 # <http://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration.html>
 
 # ---------------------------------- Cluster -----------------------------------
 # Use a descriptive name for your cluster:
 cluster.name: {{cluster_name}}
+
+cluster.routing.allocation.node_concurrent_recoveries: {{cluster_routing_allocation_node_concurrent_recoveries}}
+cluster.routing.allocation.disk.watermark.low: {{cluster_routing_allocation_disk_watermark_low}}
+cluster.routing.allocation.disk.threshold_enabled: {{cluster_routing_allocation_disk_threshold_enabled}}
+cluster.routing.allocation.disk.watermark.high: {{cluster_routing_allocation_disk_watermark_high}}
 
 # ------------------------------------ Node ------------------------------------
 # Use a descriptive name for the node:

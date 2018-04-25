@@ -38,6 +38,10 @@ elastic_pid_file = format("{elastic_pid_dir}/elasticsearch.pid")
 elastic_install_log = elastic_base_dir + '/elasticsearch-install.log'
 elastic_download = 'https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.2.0.tar.gz'
 cluster_name = config['configurations']['elastic5-config']['cluster_name']
+cluster_routing_allocation_node_concurrent_recoveries = config['configurations']['elastic5-config']['cluster_routing_allocation_node_concurrent_recoveries']
+cluster_routing_allocation_disk_watermark_low = config['configurations']['elastic5-config']['cluster_routing_allocation_disk_watermark_low']
+cluster_routing_allocation_disk_threshold_enabled = config['configurations']['elastic5-config']['cluster_routing_allocation_disk_threshold_enabled']
+cluster_routing_allocation_disk_watermark_high = config['configurations']['elastic5-config']['cluster_routing_allocation_disk_watermark_high']
 node_attr_rack = config['configurations']['elastic5-config']['node_attr_rack']
 path_data = config['configurations']['elastic5-config']['path_data']
 path_logs = config['configurations']['elastic5-config']['path_logs']
@@ -58,7 +62,7 @@ discovery_zen_ping_unicast_hosts = str(config['configurations']['elastic5-config
 # Need to parse the comma separated hostnames to create the proper string format within the configuration file
 # Elasticsearch expects the format ["host1","host2"]
 master_node_list = discovery_zen_ping_unicast_hosts.split(',')
-discovery_zen_ping_unicast_hosts = '[' +  ','.join('"' + x + '"' for x in master_node_list) + ']'
+discovery_zen_ping_unicast_hosts = '[' + ','.join('"' + x + '"' for x in master_node_list) + ']'
 
 discovery_zen_minimum_master_nodes = config['configurations']['elastic5-config']['discovery_zen_minimum_master_nodes']
 

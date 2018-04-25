@@ -23,6 +23,27 @@
         <description>Use a descriptive name for your cluster</description>
     </property>
 
+    <property>
+        <name>cluster_routing_allocation_disk_watermark_high</name>
+        <value>0.99</value>
+        <description>Property used when multiple drives are used to understand max thresholds</description>
+    </property>
+    <property>
+        <name>cluster_routing_allocation_disk_threshold_enabled</name>
+        <value>true</value>
+        <description>Property used when multiple drives are used to understand if thresholding is active</description>
+    </property>
+    <property>
+        <name>cluster_routing_allocation_disk_watermark_low</name>
+        <value>.97</value>
+        <description>Property used when multiple drives are used to understand min thresholds</description>
+    </property>
+    <property>
+        <name>cluster_routing_allocation_node_concurrent_recoveries</name>
+        <value>4</value>
+        <description>Max concurrent recoveries, useful for fast recovery of the cluster nodes on restart</description>
+    </property>
+
     <!-- Node -->
     <property>
         <name>node_attr_rack</name>
