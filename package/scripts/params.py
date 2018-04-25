@@ -62,6 +62,7 @@ else:
 
 network_host = config['configurations']['elastic5-config']['network_host']
 http_port = config['configurations']['elastic5-config']['http_port']
+transport_tcp_port = config['configurations']['elastic5-config']['transport_tcp_port']
 
 discovery_zen_ping_unicast_hosts = str(config['configurations']['elastic5-config']['discovery_zen_ping_unicast_hosts'])
 

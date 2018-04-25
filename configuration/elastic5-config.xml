@@ -80,8 +80,14 @@
 
     <property>
         <name>http_port</name>
-        <value>9200</value>
+        <value>6280</value>
         <description>Set a custom port for HTTP</description>
+    </property>
+
+    <property>
+        <name>transport_tcp_port</name>
+        <value>7380</value>
+        <description>Set a custom port for the node to node communication</description>
     </property>
 
     <!-- Discovery -->
