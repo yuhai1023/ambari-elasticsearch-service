@@ -86,7 +86,7 @@
 
     <property>
         <name>transport_tcp_port</name>
-        <value>7380</value>
+        <value>6380</value>
         <description>Set a custom port for the node to node communication</description>
     </property>
 
