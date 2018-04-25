@@ -42,6 +42,12 @@ cluster_routing_allocation_node_concurrent_recoveries = config['configurations']
 cluster_routing_allocation_disk_watermark_low = config['configurations']['elastic5-config']['cluster_routing_allocation_disk_watermark_low']
 cluster_routing_allocation_disk_threshold_enabled = config['configurations']['elastic5-config']['cluster_routing_allocation_disk_threshold_enabled']
 cluster_routing_allocation_disk_watermark_high = config['configurations']['elastic5-config']['cluster_routing_allocation_disk_watermark_high']
+
+if cluster_routing_allocation_disk_threshold_enabled:
+    cluster_routing_allocation_disk_threshold_enabled = 'true'
+else:
+    cluster_routing_allocation_disk_threshold_enabled = 'false'
+
 node_attr_rack = config['configurations']['elastic5-config']['node_attr_rack']
 path_data = config['configurations']['elastic5-config']['path_data']
 path_logs = config['configurations']['elastic5-config']['path_logs']
