@@ -89,6 +89,10 @@ class Master(Script):
         cmd = format("if [ ! -d {path_data} ]; then mkdir -p {path_data}; chown -R {elastic_user}:{elastic_group} {path_data}; fi")
         Execute(cmd)
 
+        # Make {path_logs} if not exist
+        cmd = format("if [ ! -d {path_logs} ]; then mkdir -p {path_logs}; chown -R {elastic_user}:{elastic_group} {path_logs}; fi")
+        Execute(cmd)
+
         Execute('echo "Install complete"')
 
 
