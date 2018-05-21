@@ -86,3 +86,38 @@ You may obtain a copy of the License at
 <http://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+## FAQ
+
+1. Could not find any executable java binary. Please install java in your PATH or set JAVA_HOME
+
+```bash
+# echo 'export JAVA_HOME="/usr/jdk64/jdk1.8.0_112/"' >> /etc/profile
+# echo 'Defaults        env_keep="JAVA_HOME"' >> /etc/sudoers
+```
+
+then restart ambari-server on master
+```bash
+# ambari-server restart
+```
+
+2. ERROR: bootstrap checks failed
+max file descriptors [65535] for elasticsearch process is too low, increase to at least [65536]
+memory locking requested for elasticsearch process but memory is not locked
+max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+
+```bash
+# add to /etc/security/limits.conf
+
+elasticsearch soft nofile 100000
+elasticsearch hard nofile 100000
+
+elasticsearch soft memlock unlimited
+elasticsearch hard memlock unlimited
+```
+
+then
+
+```bash
+# sudo sysctl -w vm.max_map_count=262144
+```
