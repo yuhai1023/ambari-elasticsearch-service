@@ -100,3 +100,7 @@ else:
     http_cors_enable = 'false'
 
 http_cors_allow = config['configurations']['elastic5-config']['http_cors_allow']
+
+# jvm options config
+xms = config['configurations']['elastic5-jvm']['xms']
+xmx = config['configurations']['elastic5-jvm']['xmx']

@@ -105,6 +105,7 @@ class Master(Script):
         env.set_params(params)
 
         configurations = params.config['configurations']['elastic5-config']
+        jvm_configs = params.config['configurations']['elastic5-jvm.xml']
 
         File(format("{elastic_conf_dir}/elasticsearch.yml"),
              content=Template("elasticsearch.yml.j2",
@@ -112,6 +113,12 @@ class Master(Script):
              owner=params.elastic_user,
              group=params.elastic_group
             )
+
+        File(format("{elastic_conf_dir}/jvm.options"),
+             content=Template("jvm.options.j2"),
+             owner=params.elastic_user,
+             group=params.elastic_group
+             )
 
         # Install HEAD and HQ puglins - these plugins are not currently supported by ES 5.x
         #cmd = format("{elastic_base_dir}/bin/elasticsearch-plugin install mobz/elasticserach-head")
