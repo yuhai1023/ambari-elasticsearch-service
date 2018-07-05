@@ -116,8 +116,15 @@ elasticsearch soft memlock unlimited
 elasticsearch hard memlock unlimited
 ```
 
+If you want to apply changes without reboot, modify /etc/pam.d/common-session by adding this line at the end of file:
+```
+session required pam_limits.so
+```
+
 then
 
 ```bash
 # sudo sysctl -w vm.max_map_count=262144
 ```
+
+
